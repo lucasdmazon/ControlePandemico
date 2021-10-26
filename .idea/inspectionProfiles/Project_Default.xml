@@ -1,0 +1,24 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="emogi" />
+          <option value="Aula41.Aula041.classes" />
+          <option value="Aula41.Aula041.Cliente" />
+          <option value="Aula039.Aula039.classes" />
+          <option value="Aula41.Aula041.Aluno" />
+          <option value="Aula042.Aula042.classe" />
+          <option value="Aula042.Aula042.ClienteVip" />
+          <option value="Aula042.Aula042.ClienteVip2" />
+          <option value="Aula043.smartphone.eletronico" />
+          <option value="Aula043.Aula043.smartphone" />
+          <option value="Aula043.smartphone.log" />
+          <option value="Aula044.classes.contaPoupanca.classes" />
+          <option value="Aula044.Aula044.classes" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
