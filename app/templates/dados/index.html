@@ -3,40 +3,28 @@
 {%block conteudo%}
     <h1 class="mt-5">Meus Alunos</h1>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Telefone</th>
-              <th>Categoria</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#"> João</a>
-              </td>
-              <td>Miranda</td>
-              <td>35 9 5555-5555</td>
-              <td>Família</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#"> Leandro</a>
-              </td>
-              <td>Moreira</td>
-              <td>35 9 8888-5555</td>
-              <td>Família</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#"> Fátima</a>
-              </td>
-              <td>Oliveira</td>
-              <td>35 9 9999-4352</td>
-              <td>Conhecidos</td>
-            </tr>
-          </tbody>
-        </table>
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Numero</th>
+          <th scope="col">Série</th>
+          <th scope="col">Categorias</th>
+        </tr>
+      </thead>
+      <tbody>
+       {% for dado in dados %}
+        <tr>
+          <td>
+            <a href="#">{{ dado.nome }}</a>
+          </td>
+          <td>{{ dado.sobrenome }}</td>
+          <td>{{ dado.numero }}</td>
+          <td>{{ dado.serie }}</td>
+          <td>{{ dado.categoria }}</td>
+        </tr>
+       {% endfor %}
+      </tbody>
+    </table>
 {%endblock%}
