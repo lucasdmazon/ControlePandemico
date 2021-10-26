@@ -19,6 +19,7 @@ class Dado(models.Model):
     serie = models.CharField(max_length=20)
     data_nascimento = models.DateField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
+    mostrar = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nome

@@ -14,17 +14,23 @@
         </tr>
       </thead>
       <tbody>
+
+
        {% for dado in dados %}
-        <tr>
-          <td>
-            <a href="{% url 'ver_aluno' dado.id %}">{{ dado.nome }}</a>
-          </td>
-          <td>{{ dado.sobrenome }}</td>
-          <td>{{ dado.numero }}</td>
-          <td>{{ dado.serie }}</td>
-          <td>{{ dado.categoria }}</td>
-        </tr>
+            {% if dado.mostrar %}
+                <tr>
+                  <td>
+                    <a href="{% url 'ver_aluno' dado.id %}">{{ dado.nome }}</a>
+                  </td>
+                  <td>{{ dado.sobrenome }}</td>
+                  <td>{{ dado.numero }}</td>
+                  <td>{{ dado.serie }}</td>
+                  <td>{{ dado.categoria }}</td>
+                </tr>
+            {% endif %}
        {% endfor %}
+
+
       </tbody>
     </table>
 {%endblock%}
