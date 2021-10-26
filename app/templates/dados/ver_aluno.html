@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{%block conteudo%}
+    <h1 class="mt-5">{{ dados.nome }} {{ dados.sobrenome }}</h1>
+    <dl>
+        <dt>ID</dt>
+        <dd>{{ dados.id }}</dd>
+
+        <dt>Telefone</dt>
+        <dd>{{ dados.telefone }}</dd>
+
+        <dt>E-mail</dt>
+        <dd>{{ dados.email }}</dd>
+
+        <dt>Data de Criação</dt>
+        <dd>{{ dados.data_criacao }}</dd>
+
+        <dt>Numero da Chamada</dt>
+        <dd>{{ dados.numero }}</dd>
+
+        <dt>Série</dt>
+        <dd>{{ dados.serie }}</dd>
+
+        <dt>Data de Nascimento</dt>
+        <dd>{{ dados.data_nascimento }}</dd>
+
+        <dt>Categoria</dt>
+        <dd>{{ dados.categoria }}</dd>
+
+    </dl>
+{%endblock%}

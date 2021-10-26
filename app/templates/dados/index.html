@@ -17,7 +17,7 @@
        {% for dado in dados %}
         <tr>
           <td>
-            <a href="#">{{ dado.nome }}</a>
+            <a href="{% url 'ver_aluno' dado.id %}">{{ dado.nome }}</a>
           </td>
           <td>{{ dado.sobrenome }}</td>
           <td>{{ dado.numero }}</td>
