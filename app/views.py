@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Dado
 
 
@@ -10,7 +10,7 @@ def index(request):
 
 
 def ver_aluno(request, dado_id):
-    dado = Dado.objects.get(id=dado_id)
+    dado = get_object_or_404(Dado, id=dado_id)
     return render(request, 'dados/ver_aluno.html', {
         'dados': dado
     })
