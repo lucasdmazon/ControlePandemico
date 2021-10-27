@@ -17,7 +17,6 @@
 
 
        {% for dado in dados %}
-            {% if dado.mostrar %}
                 <tr>
                   <td>
                     <a href="{% url 'ver_aluno' dado.id %}">{{ dado.nome }}</a>
@@ -27,7 +26,6 @@
                   <td>{{ dado.serie }}</td>
                   <td>{{ dado.categoria }}</td>
                 </tr>
-            {% endif %}
        {% endfor %}
 
       </tbody>
