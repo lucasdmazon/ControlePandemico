@@ -30,7 +30,19 @@
             {% endif %}
        {% endfor %}
 
-
       </tbody>
     </table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+      {% for pagina in dados.paginator.page_range %}
+      {% if dados.number == pagina %}
+        <li class="page-item active"><a class="page-link"  href="?page={{ pagina }}">{{ pagina }}</a></li>
+      {% else %}
+        <li class="page-item"><a class="page-link"  href="?page={{ pagina }}">{{ pagina }}</a></li>
+      {% endif %}
+      {% endfor %}
+  </ul>
+</nav>
+
 {%endblock%}
