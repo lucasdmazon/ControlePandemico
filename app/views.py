@@ -2,11 +2,13 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from .models import Dado
 from django.core.paginator import Paginator
+from  django.db.models import Q, Value
+from django.db.models.functions import Concat
 
 
 def index(request):
     dados = Dado.objects.order_by('-nome').filter(
-        mostrar = True
+        mostrar=True
     )
     paginator = Paginator(dados, 10)
     page = request.GET.get('page')
@@ -24,4 +26,26 @@ def ver_aluno(request, dado_id):
 
     return render(request, 'dados/ver_aluno.html', {
         'dados': dado
+    })
+
+
+def busca(request):
+    termo = request.GET.get('termo')
+
+    if termo is None:
+        raise Http404()
+
+    campos = Concat('nome', Value(' '), 'sobrenome')
+
+    dados = Dado.objects.order_by('-nome').annotate(
+        nome_completo=campos
+    ).filter(
+        Q(nome_completo__icontains=termo) | Q(numero__icontains=termo) | Q(serie__icontains=termo) | Q(categoria__nome__icontains=termo)
+    )
+
+    paginator = Paginator(dados, 10)
+    page = request.GET.get('page')
+    dados = paginator.get_page(page)
+    return render(request, 'dados/busca.html', {
+        'dados': dados
     })
