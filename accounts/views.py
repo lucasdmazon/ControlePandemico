@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .models import FormDado
 
 
 def login(request):
@@ -79,4 +80,17 @@ def cadastro(request):
 
 @login_required(redirect_field_name='login')
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    if request.method != 'POST':
+        form = FormDado()
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+    form = FormDado(request.POST)
+
+    if not form.is_valid():
+        messages.error(request, 'Erro ao enviar formulário')
+        form = FormDado(request.POST)
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+    form.save()
+    messages.success(request, f'Contato {request.POST.get("nome")} {request.POST.get("sobrenome")} salvo com sucesso!')
+    return redirect('dashboard')
