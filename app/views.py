@@ -11,7 +11,7 @@ def index(request):
     dados = Dado.objects.order_by('-nome').filter(
         mostrar=True
     )
-    paginator = Paginator(dados, 10)
+    paginator = Paginator(dados, 8)
     page = request.GET.get('page')
     dados = paginator.get_page(page)
     return render(request, 'dados/index.html', {
