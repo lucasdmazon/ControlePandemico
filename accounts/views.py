@@ -21,7 +21,7 @@ def login(request):
     else:
         auth.login(request, user)
         messages.success(request, 'Você fez login com sucesso.')
-        return redirect('dashboard')
+        return redirect('index')
 
 
 def logout(request):
