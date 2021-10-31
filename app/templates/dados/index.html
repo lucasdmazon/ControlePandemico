@@ -4,7 +4,8 @@
 
 {% include 'parciais/_messages.html' %}
 <h5 class="mt-3 mb-3"><em>Olá, você está logado como {{ user.first_name }} {{ user.last_name }}. O que desseja hoje?</em></h5>
-    <h1 class="mt-3 d-flex justify-content-center">Meus Alunos</h1>
+<p>Acessar o painel da <a href="{{ '/admin' }}">secretaria</a>.</p>
+<h1 class="mt-3 d-flex justify-content-center">Meus Alunos</h1>
 
        {% if 'accounts' not in request.path %}
           <form method="get" action="{% url 'busca' %}">
