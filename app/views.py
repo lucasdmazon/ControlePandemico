@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Dado
+from .forms import DadoForm
 from django.core.paginator import Paginator
 from django.db.models import Q, Value
 from django.db.models.functions import Concat
@@ -53,3 +54,29 @@ def busca(request):
     return render(request, 'dados/busca.html', {
         'dados': dados
     })
+
+
+def edit(request, pk):
+    dado = get_object_or_404(Dado, pk=pk)
+    form = DadoForm(instance=dado)
+
+    if(request.method == 'POST'):
+        form = DadoForm(request.POST, instance=dado)
+
+        if(form.is_valid()):
+            dado.save()
+            messages.add_message(request, messages.SUCCESS, 'Os dados do aluno foram editados.')
+            return redirect('index')
+        else:
+            messages.add_message(request, messages.ERROR, 'Erro no preenchimento.')
+            return render(request, 'accounts/cadastro.html', {'form': form, 'dado': dado})
+
+    else:
+        return render(request, 'accounts/cadastro.html', {'form': form, 'dado': dado})
+
+
+def delete(request, pk):
+    dado = Dado.objects.get(pk=pk)
+    dado.delete()
+    messages.add_message(request, messages.SUCCESS, 'Aluno deletado com sucesso.')
+    return redirect('index')
