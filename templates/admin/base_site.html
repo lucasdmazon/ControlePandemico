@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% comment %} {% load i18n  eatn_tags static %} {% endcomment %}
+
+{% load i18n %}
+
+{% load static %}
+
+
+
+{% block title %}{{ title }} | {% trans "SECRETARIA" %}{% endblock %}
+
+{% block extrastyle %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "admin/admin_color.css" %}"/>
+     <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}" type="image/x-icon">
+{% endblock %}
+
+
+
+{% block branding %}
+
+<a href="/admin"><h1 id="site-name">{% trans "ADMIN | SECRETARIA" %}</h1></a>
+
+{% endblock %}
+
+
+
+{% block nav-global %}{% endblock %}

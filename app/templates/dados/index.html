@@ -3,7 +3,7 @@
 {%block conteudo%}
 
 {% include 'parciais/_messages.html' %}
-<h5 class="mt-3 mb-3" style="color: #F0E2E7"><em>{% if user.first_name %}Olá, você está logado como {{ user.first_name }} {{ user.last_name }}. O que desseja hoje?{% else %}Olá, você está logado como Secretaria. O que desseja hoje?{% endif %}</em></h5>
+<h5 class="mt-3 mb-3" style="color: #F0E2E7"><em>Olá, você está logado como {{ user.first_name }} {{ user.last_name }}. O que desseja hoje?</em></h5>
 <p style="color: #F0E2E7">Acessar o painel da <a href="{{ '/admin' }}" style="color: #B20D30">Secretaria</a>.</p>
 <h1 class="mt-3 d-flex justify-content-center" style="color: #F0E2E7">Meus Alunos</h1>
 

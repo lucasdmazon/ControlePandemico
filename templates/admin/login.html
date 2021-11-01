@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" dir="ltr">
+<head>
+<title>Acessar | SECRETARIA</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+<script src="/static/admin/js/nav_sidebar.js" defer></script>
+<link rel="stylesheet" type="text/css" href="/static/admin/admin_color.css"/>
+<link rel="shortcut icon" href="/static/favicon/favicon.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" login"
+  data-admin-utc-offset="-10800">
+
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+<div id="header">
+<div id="branding">
+<a href="/admin"><h1 id="site-name">ADMIN | SECRETARIA</h1></a>
+</div>
+</div>
+    <!-- END Header -->
+<div class="main shifted" id="main">
+<div class="content">
+        <!-- Content -->
+<div id="content" class="colM">
+<div id="content-main">
+
+<form action="/admin/login/?next=/admin/" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="GBr6iUUb5vhkOgbj7ozpcv53Wn2ZNoagAmEknDIfbMyTf8Bs21PijnuwYoDi2HTF">
+  {% csrf_token %}
+    <div class="form-row">
+
+    <label class="required" for="id_username">Usuário:</label> <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+  </div>
+  <div class="form-row">
+
+    <label class="required" for="id_password">Senha:</label> <input type="password" name="password" autocomplete="current-password" required id="id_password">
+    <input type="hidden" name="next" value="/admin/">
+  </div>
+
+<a href="/">Logar como professor</a>
+  <div class="submit-row">
+    <input type="submit" value="Acessar">
+  </div>
+</form>
+</div>
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+</html>
