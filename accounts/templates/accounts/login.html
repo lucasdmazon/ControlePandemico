@@ -6,7 +6,10 @@
 
 {% include 'parciais/_messages.html' %}
 
-<h1 class="mt-3 mb-3">Login</h1>
+<br><br><br>
+<main class="text-white col-md-6  container" style="border-radius: 25px; background-color: #1D2124">
+<br>
+<h1 class="mt-3 mb-3 d-flex justify-content-center" align="center">Login</h1>
 
 {% if not user.is_authenticated %}
 
@@ -20,15 +23,17 @@
     <label>Senha</label>
     <input type="password" name="senha" class="form-control">
   </div>
-  <button type="submit" class="btn bg-dark border-dark text-white">Entrar</button>
-    <p>Logar como <a href="{{ '/admin' }}">secretaria</a></p>
+    <div class="col text-center">
+  <button type="submit" class="btn bg-dark border-dark text-white ">Entrar</button>
+    </div>
+    <h6 class="col text-center">Logar como <a href="{{ '/admin' }}" class="text-info">secretaria</a></h6>
 </form>
 {% else %}
 <p>
  Você fez login com {{ user }}.
   <a href="{% url 'logout' %}">Clique aqui</a> para sair.
 </p>
-
 {% endif %}
-
+<br>
+</main>
 {% endblock %}
