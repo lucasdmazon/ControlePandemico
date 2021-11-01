@@ -6,12 +6,12 @@
 
 {% include 'parciais/_messages.html' %}
 
-<h1 class="d-flex justify-content-center">Editar Aluno</h1>
+<h1 class="d-flex justify-content-center" style="color: #F0E2E7">Editar Aluno</h1>
 
 <div class="container">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <table class="table">
+        <table class="table" style="background-color: #3E444A; color: #F0E2E7">
             {{ form }}
             <tr>
                 <td colspan="2">
