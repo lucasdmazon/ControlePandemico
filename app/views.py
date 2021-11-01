@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='login')
 def index(request):
-    dados = Dado.objects.order_by('-nome').filter(
+    dados = Dado.objects.order_by('nome').filter(
         mostrar=True
     )
     paginator = Paginator(dados, 8)

@@ -3,6 +3,7 @@
 {%block titulo%}{{ dados.nome }} {{ dados.sobrenome }}| {%endblock%}
 
 {%block conteudo%}
+<div class="text-center col-md-6 container" style="background-color: #F0E2E7; border-radius: 25px; box-shadow: 10px 10px 10px 5px black">
     <h1 class="mt-5">{{ dados.nome }} {{ dados.sobrenome }}</h1>
     <dl>
         <dt>ID</dt>
@@ -32,4 +33,6 @@
         <a href="edit/{{dados.id}}" class="btn bg-success border-success text-white">Editar</a>
         <a href="delete/{{dados.id}}" class="btn bg-danger border-danger text-white">Deletar</a>
     </dl>
+    <br>
+</div>
 {%endblock%}
