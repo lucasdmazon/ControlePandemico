@@ -78,7 +78,6 @@ def cadastro(request):
     return redirect('login')
 
 
-@login_required(redirect_field_name='login')
 def dashboard(request):
     if request.method != 'POST':
         form = FormDado()

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from cpf_field.models import CPFField
 
 
 class Categoria(models.Model):
@@ -18,6 +19,7 @@ class Dado(models.Model):
     numero = models.IntegerField()
     serie = models.CharField(max_length=20)
     data_nascimento = models.DateField(blank=True)
+    cpf = CPFField('cpf')
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     mostrar = models.BooleanField(default=True)
 
