@@ -10,6 +10,13 @@ class Categoria(models.Model):
         return self.nome
 
 
+class Serie(models.Model):
+    nome = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.nome
+
+
 class Dado(models.Model):
     nome = models.CharField(max_length=255)
     sobrenome = models.CharField(max_length=255)
@@ -17,7 +24,7 @@ class Dado(models.Model):
     email = models.CharField(max_length=255, blank=True)
     data_criacao = models.DateTimeField(default=timezone.now)
     numero = models.IntegerField()
-    serie = models.CharField(max_length=20)
+    serie = models.ForeignKey(Serie, on_delete=models.DO_NOTHING)
     data_nascimento = models.DateField(blank=True)
     cpf = CPFField('cpf')
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Categoria, Dado
+from .models import Categoria, Dado, Serie
 
 
 class DadoAdmin(admin.ModelAdmin):
@@ -10,6 +10,7 @@ class DadoAdmin(admin.ModelAdmin):
     list_editable = ('telefone', 'mostrar')
 
 
-admin.site.register(Categoria)
 admin.site.register(Dado, DadoAdmin)
+admin.site.register(Categoria)
+admin.site.register(Serie)
 
