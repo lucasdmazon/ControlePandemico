@@ -42,10 +42,10 @@ def busca(request):
 
     campos = Concat('nome', Value(' '), 'sobrenome')
 
-    dados = Dado.objects.order_by('-nome').annotate(
+    dados = Dado.objects.order_by('nome').annotate(
         nome_completo=campos
     ).filter(
-        Q(nome_completo__icontains=termo) | Q(numero__icontains=termo) | Q(serie__icontains=termo) | Q(categoria__nome__icontains=termo)
+        Q(nome_completo__icontains=termo) | Q(numero__icontains=termo) | Q(serie__nome__icontains=termo) | Q(categoria__nome__icontains=termo)
     )
 
     paginator = Paginator(dados, 10)
